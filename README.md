@@ -1,7 +1,7 @@
 # CloudFormation-Scripts
  Script para criação de uma maquina Freetier t2.micro, ja com SecurityGroup pré-existente
 
-##Script para criar instancia FreeTier t2.micro##
+##Script para criar instancia FreeTier t2.micro <h2>
 
 **Altere os campos comentados**
 
