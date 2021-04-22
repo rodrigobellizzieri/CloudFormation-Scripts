@@ -1,0 +1,40 @@
+Resources:
+  rdsDBInstance:
+    Type: AWS::RDS::DBInstance
+    Properties:
+      AllocatedStorage: 20
+      DBInstanceClass: db.t2.micro
+      AllowMajorVersionUpgrade: false
+      AutoMinorVersionUpgrade: false
+      AvailabilityZone: us-east-2
+      BackupRetentionPeriod: 0
+      CharacterSetName: utf8
+      DBInstanceIdentifier: mydatabase
+      DBName: bellizziericloudformation
+      DBParameterGroupName: default.mysql8.0
+      DBSecurityGroups: 
+        - db-sg-group
+      DBSnapshotIdentifier: bkpdbbellizzieri
+      DBSubnetGroupName: default-vpc-322ba759
+      Engine: mysql
+      EngineVersion: default.mysql8.0
+      Iops: 100
+      KmsKeyId: default
+      LicenseModel: GENERAL_PUBLIC_LICENSE
+      MasterUsername: admin
+      MasterUserPassword: Loc@1020
+      MultiAZ: false
+      OptionGroupName: GrupoTeste
+      Port: 3306
+      PreferredBackupWindow: false
+      PreferredMaintenanceWindow: false
+      PubliclyAccessible: true
+      SourceDBInstanceIdentifier: mydatabase
+      StorageEncrypted: false
+      StorageType: gp2
+      VPCSecurityGroups:
+        - default
+      Tags:
+        - Key: Name
+          Value: BancoTeste
+
