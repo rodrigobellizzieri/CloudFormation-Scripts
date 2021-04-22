@@ -1,0 +1,25 @@
+#Script para criar instancia FreeTier t2.micro
+Resources:
+  myEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      KeyName: Linux
+      DisableApiTermination: false
+      ImageId: ami-05d72852800cbf29e
+      InstanceType: t2.micro
+      Monitoring: false
+      SecurityGroupIds:
+        - All
+      UserData: !Base64 |
+        #!/bin/bash -ex
+        sudo su 
+        yum update -y 
+        yum install httpd -y 
+        systemctl start httpd
+        chkconfig httpd on
+        cd /var/www/html
+        touch index.htmk
+        echo "Ola Mundo - Servidor OK" > index.html
+      Tags:
+        - Key: Name
+          Value: WebServer-CloudFormation
